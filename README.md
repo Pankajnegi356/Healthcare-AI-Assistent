@@ -51,7 +51,7 @@ A sophisticated AI-powered healthcare diagnostic platform that provides intellig
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/MohitKapoor19/healthcare-ai-assistant.git
+git clone https://github.com/Pankajnegi356/Healthcare-AI-Assistent.git
 cd healthcare-ai-assistant
 ```
 
