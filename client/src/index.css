@@ -1,0 +1,1842 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(224, 71.4%, 4.1%);
+  --muted: hsl(220, 14.3%, 95.9%);
+  --muted-foreground: hsl(220, 8.9%, 46.1%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(224, 71.4%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(224, 71.4%, 4.1%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(220, 14.3%, 95.9%);
+  --secondary-foreground: hsl(220.9, 39.3%, 11%);
+  --accent: hsl(220, 14.3%, 95.9%);
+  --accent-foreground: hsl(220.9, 39.3%, 11%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(217, 91%, 60%);
+  --radius: 0.75rem;
+
+  /* Comprehensive Medical Color Palette */
+  --medical-blue: hsl(217, 91%, 60%);
+  --medical-blue-light: hsl(217, 91%, 95%);
+  --medical-blue-dark: hsl(217, 91%, 45%);
+  --medical-green: hsl(142, 76%, 36%);
+  --medical-green-light: hsl(142, 76%, 95%);
+  --medical-green-dark: hsl(142, 76%, 25%);
+  --medical-red: hsl(0, 84.2%, 60.2%);
+  --medical-red-light: hsl(0, 84.2%, 95%);
+  --medical-red-dark: hsl(0, 84.2%, 45%);
+  --medical-yellow: hsl(43, 96%, 56%);
+  --medical-yellow-light: hsl(43, 96%, 95%);
+  --medical-yellow-dark: hsl(43, 96%, 45%);
+  --medical-purple: hsl(259, 94%, 51%);
+  --medical-purple-light: hsl(259, 94%, 95%);
+  --medical-purple-dark: hsl(259, 94%, 40%);
+  --medical-teal: hsl(173, 58%, 39%);
+  --medical-teal-light: hsl(173, 58%, 95%);
+  --medical-teal-dark: hsl(173, 58%, 30%);
+  --medical-orange: hsl(25, 95%, 53%);
+  --medical-orange-light: hsl(25, 95%, 95%);
+  --medical-orange-dark: hsl(25, 95%, 40%);
+  --medical-pink: hsl(336, 84%, 57%);
+  --medical-pink-light: hsl(336, 84%, 95%);
+  --medical-pink-dark: hsl(336, 84%, 45%);
+  --medical-cyan: hsl(188, 78%, 41%);
+  --medical-cyan-light: hsl(188, 78%, 95%);
+  --medical-cyan-dark: hsl(188, 78%, 30%);
+  
+  /* Enhanced Multi-color Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(259, 94%, 51%) 100%);
+  --gradient-success: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(173, 58%, 39%) 100%);
+  --gradient-warning: linear-gradient(135deg, hsl(43, 96%, 56%) 0%, hsl(25, 95%, 53%) 100%);
+  --gradient-danger: linear-gradient(135deg, hsl(0, 84.2%, 60.2%) 0%, hsl(336, 84%, 57%) 100%);
+  --gradient-info: linear-gradient(135deg, hsl(188, 78%, 41%) 0%, hsl(217, 91%, 60%) 100%);
+  --gradient-medical: linear-gradient(45deg, hsl(217, 91%, 60%) 0%, hsl(142, 76%, 36%) 25%, hsl(43, 96%, 56%) 50%, hsl(259, 94%, 51%) 75%, hsl(173, 58%, 39%) 100%);
+  --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(259, 94%, 51%) 30%, hsl(173, 58%, 39%) 70%, hsl(142, 76%, 36%) 100%);
+  
+  /* Severity Level Colors */
+  --severity-critical: hsl(0, 84.2%, 60.2%);
+  --severity-high: hsl(25, 95%, 53%);
+  --severity-medium: hsl(43, 96%, 56%);
+  --severity-low: hsl(142, 76%, 36%);
+  --severity-minimal: hsl(173, 58%, 39%);
+}
+
+.dark {
+  --background: hsl(224, 71.4%, 4.1%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(223, 47%, 11%);
+  --muted-foreground: hsl(215.4, 16.3%, 56.9%);
+  --popover: hsl(224, 71.4%, 4.1%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(224, 71.4%, 4.1%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(216, 34%, 17%);
+  --input: hsl(216, 34%, 17%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(222.2, 84%, 4.9%);
+  --secondary: hsl(222.2, 84%, 4.9%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(216, 34%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(216, 34%, 17%);
+  --radius: 0.75rem;
+
+  /* Enhanced Dark Theme Medical Color Palette */
+  --medical-blue: hsl(217, 91%, 65%);
+  --medical-blue-light: hsl(217, 91%, 15%);
+  --medical-blue-dark: hsl(217, 91%, 50%);
+  --medical-green: hsl(142, 76%, 50%);
+  --medical-green-light: hsl(142, 76%, 15%);
+  --medical-green-dark: hsl(142, 76%, 35%);
+  --medical-red: hsl(0, 84.2%, 65%);
+  --medical-red-light: hsl(0, 84.2%, 15%);
+  --medical-red-dark: hsl(0, 84.2%, 50%);
+  --medical-yellow: hsl(43, 96%, 60%);
+  --medical-yellow-light: hsl(43, 96%, 15%);
+  --medical-yellow-dark: hsl(43, 96%, 45%);
+  --medical-purple: hsl(259, 94%, 60%);
+  --medical-purple-light: hsl(259, 94%, 15%);
+  --medical-purple-dark: hsl(259, 94%, 45%);
+  --medical-teal: hsl(173, 58%, 45%);
+  --medical-teal-light: hsl(173, 58%, 15%);
+  --medical-teal-dark: hsl(173, 58%, 30%);
+  --medical-orange: hsl(25, 95%, 60%);
+  --medical-orange-light: hsl(25, 95%, 15%);
+  --medical-orange-dark: hsl(25, 95%, 45%);
+  --medical-pink: hsl(336, 84%, 65%);
+  --medical-pink-light: hsl(336, 84%, 15%);
+  --medical-pink-dark: hsl(336, 84%, 50%);
+  --medical-cyan: hsl(188, 78%, 50%);
+  --medical-cyan-light: hsl(188, 78%, 15%);
+  --medical-cyan-dark: hsl(188, 78%, 35%);
+  
+  /* Dark Theme Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 65%) 0%, hsl(259, 94%, 60%) 100%);
+  --gradient-success: linear-gradient(135deg, hsl(142, 76%, 50%) 0%, hsl(173, 58%, 45%) 100%);
+  --gradient-warning: linear-gradient(135deg, hsl(43, 96%, 60%) 0%, hsl(25, 95%, 60%) 100%);
+  --gradient-danger: linear-gradient(135deg, hsl(0, 84.2%, 65%) 0%, hsl(336, 84%, 65%) 100%);
+  --gradient-info: linear-gradient(135deg, hsl(188, 78%, 50%) 0%, hsl(217, 91%, 65%) 100%);
+  --gradient-medical: linear-gradient(45deg, hsl(217, 91%, 65%) 0%, hsl(142, 76%, 50%) 25%, hsl(43, 96%, 60%) 50%, hsl(259, 94%, 60%) 75%, hsl(173, 58%, 45%) 100%);
+  --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 65%) 0%, hsl(259, 94%, 60%) 30%, hsl(173, 58%, 45%) 70%, hsl(142, 76%, 50%) 100%);
+  
+  /* Dark Severity Level Colors */
+  --severity-critical: hsl(0, 84.2%, 65%);
+  --severity-high: hsl(25, 95%, 60%);
+  --severity-medium: hsl(43, 96%, 60%);
+  --severity-low: hsl(142, 76%, 50%);
+  --severity-minimal: hsl(173, 58%, 45%);
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Enhanced Medical UI Components with Modern Design */
+.glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.15), 
+              0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 0.2), 
+              0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  transform: translateY(-2px);
+}
+
+.dark .glass-card {
+  background: rgba(17, 24, 39, 0.85);
+  border-color: rgba(107, 114, 128, 0.3);
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.4), 
+              0 0 0 1px rgba(107, 114, 128, 0.2) inset;
+}
+
+.dark .glass-card:hover {
+  background: rgba(17, 24, 39, 0.9);
+  box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 0.5), 
+              0 0 0 1px rgba(107, 114, 128, 0.3) inset;
+}
+
+/* Enhanced Consultation Panel Styles */
+.consultation-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.08), 
+              0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.consultation-card:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.12), 
+              0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.consultation-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced Form Elements */
+.medical-input {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05) inset;
+}
+
+.medical-input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+              0 2px 8px -2px rgba(0, 0, 0, 0.05) inset;
+  transform: translateY(-1px);
+}
+
+.medical-textarea {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05) inset;
+  resize: none;
+  min-height: 120px;
+}
+
+.medical-textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+              0 2px 8px -2px rgba(0, 0, 0, 0.05) inset;
+  transform: translateY(-1px);
+}
+
+/* Enhanced Progress Steps */
+.progress-step {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.progress-step.pending {
+  border-color: rgba(156, 163, 175, 0.6);
+  color: rgba(107, 114, 128, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.progress-step.active {
+  border-color: rgba(59, 130, 246, 1);
+  color: rgba(59, 130, 246, 1);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  animation: pulse-blue 2s infinite;
+}
+
+/* Modern Animations & Keyframes */
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInBlur {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Enhanced Card Animations */
+.card-enter {
+  animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-scale {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Enhanced Loading States */
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(229, 231, 235, 1) 0%, 
+    rgba(229, 231, 235, 0.8) 25%, 
+    rgba(229, 231, 235, 0.4) 50%, 
+    rgba(229, 231, 235, 0.8) 75%, 
+    rgba(229, 231, 235, 1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.loading-overlay {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  animation: fadeInBlur 0.3s ease;
+}
+
+/* Enhanced Interactive Elements */
+.interactive-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.interactive-card:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(99, 102, 241, 0.2) inset;
+  transform: translateY(-2px);
+}
+
+.interactive-card:hover::before {
+  left: 100%;
+}
+
+.interactive-card:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Medical Status Indicators */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  position: relative;
+}
+
+.status-indicator::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid;
+  animation: ping 2s infinite;
+}
+
+.status-critical {
+  background: var(--severity-critical);
+}
+
+.status-critical::after {
+  border-color: var(--severity-critical);
+}
+
+.status-normal {
+  background: var(--severity-low);
+}
+
+.status-normal::after {
+  border-color: var(--severity-low);
+}
+
+/* Enhanced User Type Selection */
+.user-type-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.user-type-card:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(99, 102, 241, 0.1) inset;
+  transform: translateY(-4px);
+}
+
+.user-type-card:hover::before {
+  transform: scaleX(1);
+}
+
+.user-type-card.selected {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.05), rgba(129, 140, 248, 0.05));
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 8px 32px -4px rgba(99, 102, 241, 0.2),
+              0 0 0 1px rgba(99, 102, 241, 0.2) inset;
+}
+
+.user-type-card.selected::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced Question Type Selection */
+.question-type-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.question-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-warning);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.question-type-card:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  border-color: rgba(251, 146, 60, 0.5);
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(251, 146, 60, 0.1) inset;
+  transform: translateY(-4px);
+}
+
+.question-type-card:hover::before {
+  transform: scaleX(1);
+}
+
+.question-type-card.selected {
+  background: linear-gradient(145deg, rgba(251, 146, 60, 0.05), rgba(252, 165, 89, 0.05));
+  border-color: rgba(251, 146, 60, 0.8);
+  box-shadow: 0 8px 32px -4px rgba(251, 146, 60, 0.2),
+              0 0 0 1px rgba(251, 146, 60, 0.2) inset;
+}
+
+.question-type-card.selected::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced MCQ Options */
+.mcq-option {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mcq-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.mcq-option:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.mcq-option:hover::before {
+  left: 100%;
+}
+
+.mcq-option.selected {
+  background: linear-gradient(145deg, rgba(139, 92, 246, 0.05), rgba(167, 122, 252, 0.05));
+  border-color: rgba(139, 92, 246, 0.8);
+  box-shadow: 0 8px 32px -4px rgba(139, 92, 246, 0.2),
+              0 0 0 1px rgba(139, 92, 246, 0.2) inset;
+}
+
+/* Enhanced Progress Bar */
+.enhanced-progress {
+  background: linear-gradient(90deg, 
+    rgba(226, 232, 240, 0.8) 0%, 
+    rgba(226, 232, 240, 0.4) 50%, 
+    rgba(226, 232, 240, 0.8) 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.enhanced-progress-fill {
+  background: var(--gradient-primary);
+  border-radius: 8px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced Analysis Results */
+.analysis-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.analysis-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-success);
+}
+
+.diagnosis-item {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.diagnosis-item:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.confidence-badge {
+  background: var(--gradient-info);
+  color: white;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Enhanced Floating Elements */
+.floating-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: float 3s ease-in-out infinite;
+  z-index: 50;
+}
+
+.floating-fab:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.5);
+}
+
+/* Enhanced Severity Indicators */
+.severity-critical {
+  background: linear-gradient(135deg, var(--severity-critical), #dc2626);
+  color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+.severity-high {
+  background: linear-gradient(135deg, var(--severity-high), #ea580c);
+  color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+}
+
+.severity-medium {
+  background: linear-gradient(135deg, var(--severity-medium), #d97706);
+  color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.severity-low {
+  background: linear-gradient(135deg, var(--severity-low), #16a34a);
+  color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .consultation-card {
+    border-radius: 12px;
+    margin: 8px;
+  }
+  
+  .user-type-card,
+  .question-type-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  
+  .progress-step {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+  
+  .floating-fab {
+    bottom: 16px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Enhanced Dark Mode Support */
+.dark .consultation-card {
+  background: linear-gradient(145deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.95));
+  border-color: rgba(75, 85, 99, 0.5);
+}
+
+.dark .medical-input,
+.dark .medical-textarea {
+  background: linear-gradient(145deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9));
+  border-color: rgba(75, 85, 99, 0.5);
+  color: rgba(243, 244, 246, 1);
+}
+
+.dark .user-type-card,
+.dark .question-type-card,
+.dark .mcq-option {
+  background: linear-gradient(145deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.95));
+  border-color: rgba(75, 85, 99, 0.5);
+}
+
+.dark .analysis-card,
+.dark .diagnosis-item {
+  background: linear-gradient(145deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.95));
+  border-color: rgba(75, 85, 99, 0.5);
+}
+
+.progress-step.active {
+  @apply border-blue-500 bg-blue-500 text-white;
+}
+
+.progress-step.completed {
+  @apply border-green-500 bg-green-500 text-white;
+}
+
+.differential-diagnosis-item {
+  @apply transition-all duration-200;
+}
+
+.differential-diagnosis-item.expanded {
+  @apply bg-blue-50 dark:bg-blue-900;
+}
+
+.clinical-report-card {
+  @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg;
+}
+
+.clinical-summary-card {
+  @apply transition-all duration-200 hover:shadow-md;
+}
+
+.clinical-detail-section {
+  @apply space-y-3;
+}
+
+.clinical-section-title {
+  @apply text-sm font-semibold;
+}
+
+.clinical-description {
+  @apply text-sm leading-relaxed;
+}
+
+.red-flag-alert {
+  @apply transition-all duration-200 hover:shadow-sm;
+}
+
+.red-flag-item {
+  @apply flex items-start gap-3 p-3 bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-800 rounded-lg;
+}
+
+.recommended-test {
+  @apply p-4 border border-gray-200 rounded-lg transition-all duration-200 hover:border-blue-300 hover:shadow-sm;
+}
+
+.diagnostic-test-item {
+  @apply transition-all duration-200 hover:shadow-sm;
+}
+
+.diagnostic-workflow-card {
+  @apply bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900;
+}
+
+.diagnostic-strategy-section {
+  @apply space-y-3;
+}
+
+.strategy-step {
+  @apply p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-200 hover:shadow-sm;
+}
+
+.strategy-step-number {
+  @apply w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold;
+}
+
+.interpretation-guide-section {
+  @apply space-y-3;
+}
+
+.interpretation-scenario {
+  @apply p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg;
+}
+
+.scenario-header {
+  @apply flex items-center gap-2;
+}
+
+.decision-points-section {
+  @apply space-y-3;
+}
+
+.decision-point {
+  @apply p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg;
+}
+
+/* Animation Classes */
+.animate-fade-in-scale {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Additional Medical Theme Enhancements */
+.medical-gradient-bg {
+  background: var(--gradient-medical);
+}
+
+.consultation-panel-bg {
+  background: linear-gradient(135deg, 
+    hsl(217, 91%, 98%) 0%, 
+    hsl(142, 76%, 98%) 25%, 
+    hsl(259, 94%, 98%) 50%, 
+    hsl(173, 58%, 98%) 75%, 
+    hsl(217, 91%, 98%) 100%);
+}
+
+.dark .consultation-panel-bg {
+  background: linear-gradient(135deg, 
+    hsl(217, 91%, 8%) 0%, 
+    hsl(142, 76%, 8%) 25%, 
+    hsl(259, 94%, 8%) 50%, 
+    hsl(173, 58%, 8%) 75%, 
+    hsl(217, 91%, 8%) 100%);
+}
+
+/* Enhanced Shadows */
+.clinical-shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.clinical-shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.clinical-shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.clinical-shadow-xl {
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .clinical-summary-card {
+    padding: 16px;
+  }
+  
+  .clinical-detail-section {
+    padding: 16px;
+  }
+  
+  .ranking-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .clinical-heading-primary {
+    font-size: 24px;
+  }
+  
+  .clinical-heading-secondary {
+    font-size: 18px;
+  }
+}
+
+/* Interactive States */
+.clinical-interactive:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.clinical-interactive:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading States for Clinical Components */
+.clinical-skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: clinical-loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes clinical-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Red Flags Section Styling */
+.red-flag-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(254, 202, 202);
+  background: linear-gradient(to right, rgb(254, 242, 242), rgb(255, 237, 213));
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .red-flag-item {
+  border-color: rgb(153, 27, 27);
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.2), rgba(234, 88, 12, 0.2));
+}
+
+.red-flag-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.15);
+}
+
+/* Recommended Tests Styling */
+.recommended-test {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(191, 219, 254);
+  background: linear-gradient(to right, rgb(239, 246, 255), rgb(224, 242, 254));
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .recommended-test {
+  border-color: rgb(30, 64, 175);
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(79, 70, 229, 0.2));
+}
+
+.recommended-test:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.15);
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+}
+
+.dark .recommended-test:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(79, 70, 229, 0.1) 100%);
+}
+
+/* Clinical Actions Section */
+.clinical-actions {
+  background: linear-gradient(to right, rgb(209, 250, 229), rgb(204, 251, 241), rgb(207, 250, 254));
+  border: 1px solid rgb(167, 243, 208);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}
+
+.dark .clinical-actions {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.2), rgba(20, 184, 166, 0.2), rgba(6, 182, 212, 0.2));
+  border-color: rgb(6, 78, 59);
+}
+
+/* Management recommendations */
+.management-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(187, 247, 208);
+  background: linear-gradient(to right, rgb(240, 253, 244), rgb(209, 250, 229));
+  box-shadow: 0 2px 4px rgba(34, 197, 94, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .management-item {
+  border-color: rgb(21, 128, 61);
+  background: linear-gradient(to right, rgba(34, 197, 94, 0.2), rgba(16, 185, 129, 0.2));
+}
+
+.management-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(34, 197, 94, 0.15);
+}
+
+/* Progress Indicator Enhancement */
+.progress-step {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.progress-step.pending {
+  background-color: rgb(243, 244, 246);
+  color: rgb(107, 114, 128);
+  border: 2px solid rgb(229, 231, 235);
+}
+
+.progress-step.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  animation: pulse-blue 2s infinite;
+}
+
+.progress-step.completed {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: 2px solid #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.dark .progress-step.pending {
+  background-color: rgb(55, 65, 81);
+  color: rgb(156, 163, 175);
+  border-color: rgb(75, 85, 99);
+}
+
+/* Professional animations */
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Enhanced medical typography */
+.medical-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.medical-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  color: rgb(107, 114, 128);
+}
+
+.dark .medical-subtitle {
+  color: rgb(156, 163, 175);
+}
+
+/* Clinical summary enhancements */
+.clinical-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Professional spacing and layout */
+.consultation-panel {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .consultation-panel {
+    max-width: 1200px;
+  }
+}
+
+/* Print styles for clinical reports */
+@media print {
+  .consultation-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+  
+  .animate-fade-in-scale {
+    animation: none !important;
+  }
+  
+  .gradient-border {
+    border: 1px solid #d1d5db !important;
+    background: white !important;
+  }
+}
+
+/* Enhanced Test Details Styling */
+.test-detail-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  padding: 1rem;
+  margin-top: 0.75rem;
+}
+
+.dark .test-detail-section {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(51, 65, 85, 0.3) 100%);
+  border-color: #334155;
+}
+
+.test-rationale-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-left: 3px solid #3b82f6;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.75rem;
+}
+
+.dark .test-rationale-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-left-color: #60a5fa;
+}
+
+.test-findings-normal {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-left: 3px solid #22c55e;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .test-findings-normal {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(21, 128, 61, 0.05) 100%);
+  border-left-color: #4ade80;
+}
+
+.test-findings-abnormal {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-left: 3px solid #f59e0b;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .test-findings-abnormal {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%);
+  border-left-color: #fbbf24;
+}
+
+.test-urgency-alert {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-left: 3px solid #ef4444;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.dark .test-urgency-alert {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+  border-left-color: #f87171;
+}
+
+.diagnosis-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.priority-badge-high {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.priority-badge-medium {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.priority-badge-low {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  border: 1px solid #4ade80;
+}
+
+.dark .priority-badge-high {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
+  color: #fca5a5;
+}
+
+.dark .priority-badge-medium {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.1) 100%);
+  color: #fcd34d;
+}
+
+.dark .priority-badge-low {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(21, 128, 61, 0.1) 100%);
+  color: #86efac;
+}
+
+/* Diagnostic Workflow Styling */
+.diagnostic-workflow-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #0ea5e9;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+}
+
+.dark .diagnostic-workflow-card {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(2, 132, 199, 0.05) 100%);
+  border-color: #0284c7;
+}
+
+.diagnostic-strategy-section {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+  border: 1px solid #eab308;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.dark .diagnostic-strategy-section {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.1) 0%, rgba(202, 138, 4, 0.05) 100%);
+  border-color: #ca8a04;
+}
+
+.strategy-step {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.strategy-step:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.dark .strategy-step {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: #475569;
+}
+
+.strategy-step-number {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.interpretation-guide-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #22c55e;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.dark .interpretation-guide-section {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(21, 128, 61, 0.05) 100%);
+  border-color: #16a34a;
+}
+
+.interpretation-scenario {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.interpretation-scenario:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .interpretation-scenario {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: #475569;
+}
+
+.scenario-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.decision-points-section {
+  background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+  border: 1px solid #a855f7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.dark .decision-points-section {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(147, 51, 234, 0.05) 100%);
+  border-color: #9333ea;
+}
+
+.decision-point {
+  background: white;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .decision-point {
+  background: rgba(30, 41, 59, 0.3);
+  border-color: #475569;
+}
+
+/* Enhanced Medical UI Styles */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(259, 94%, 51%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.medical-gradient-bg {
+  background: linear-gradient(135deg, 
+    hsl(217, 91%, 98%) 0%, 
+    hsl(142, 76%, 98%) 50%, 
+    hsl(173, 58%, 98%) 100%);
+}
+
+.diagnosis-card {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.05) 0%, 
+    rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  transition: all 0.3s ease;
+}
+
+.diagnosis-card:hover {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.1) 0%, 
+    rgba(59, 130, 246, 0.1) 100%);
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-2px);
+}
+
+.clinical-action-item {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(248, 250, 252, 0.9) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: all 0.2s ease;
+}
+
+.clinical-action-item:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(241, 245, 249, 1) 100%);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateX(4px);
+}
+
+.priority-badge {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.1) 0%, 
+    rgba(16, 185, 129, 0.1) 100%);
+  color: rgba(34, 197, 94, 0.9);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.answered-question {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.05) 0%, 
+    rgba(16, 185, 129, 0.05) 100%);
+  border-left: 4px solid rgba(34, 197, 94, 0.6);
+}
+
+/* Medical Status Indicators */
+.status-complete {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.status-priority {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.status-urgent {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.status-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Enhanced Card Animations */
+.medical-card-enter {
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Improved Focus States */
+.medical-focus:focus {
+  outline: none;
+  ring: 2px solid hsl(217, 91%, 60%);
+  ring-offset: 2px;
+}
+
+/* Professional Medical Typography */
+.medical-heading {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.medical-subheading {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: hsl(220, 8.9%, 46.1%);
+}
+
+.medical-body {
+  line-height: 1.6;
+  color: hsl(224, 71.4%, 4.1%);
+}
+
+/* Enhanced Scrollbar */
+.medical-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.medical-scroll::-webkit-scrollbar-track {
+  background: hsl(220, 14.3%, 95.9%);
+  border-radius: 3px;
+}
+
+.medical-scroll::-webkit-scrollbar-thumb {
+  background: hsl(217, 91%, 60%);
+  border-radius: 3px;
+}
+
+.medical-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(217, 91%, 45%);
+}
+
+/* Enhanced Navigation Sidebar Styles */
+.enhanced-sidebar {
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.enhanced-sidebar-overlay {
+  transition: opacity 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.enhanced-sidebar-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.enhanced-sidebar-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure proper z-indexing for the sidebar */
+.enhanced-sidebar-container {
+  z-index: 999;
+}
+
+/* Smooth animations for the toggle button */
+.sidebar-toggle-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .enhanced-sidebar {
+    width: 100vw !important;
+  }
+  
+  .enhanced-sidebar-overlay {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* Line clamp utility for text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced Responsive Design Utilities */
+.enhanced-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.enhanced-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+.enhanced-card {
+  @apply bg-white/80 backdrop-blur-sm border-2 border-white/50 shadow-xl rounded-2xl overflow-hidden;
+  @apply hover:shadow-2xl transition-all duration-300;
+}
+
+.enhanced-input {
+  @apply w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border-2 border-gray-200;
+  @apply focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300;
+  @apply text-sm sm:text-base bg-white/80 backdrop-blur-sm;
+}
+
+.enhanced-textarea {
+  @apply w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border-2 border-gray-200;
+  @apply focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300;
+  @apply text-sm sm:text-base bg-white/80 backdrop-blur-sm resize-none;
+}
+
+.enhanced-button {
+  @apply px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base;
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white;
+  @apply hover:from-blue-700 hover:to-purple-700 transition-all duration-300;
+  @apply focus:ring-2 focus:ring-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Enhanced Progress Indicators */
+.enhanced-progress {
+  @apply relative overflow-hidden bg-gradient-to-r from-gray-200 to-gray-300 rounded-full;
+}
+
+.enhanced-progress-fill {
+  @apply bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full;
+  @apply relative overflow-hidden;
+}
+
+.enhanced-progress-fill::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  @apply animate-pulse;
+}
+
+/* Step Indicators */
+.progress-step {
+  @apply rounded-full flex items-center justify-center transition-all duration-300;
+  @apply border-2 font-semibold text-sm;
+}
+
+.progress-step.pending {
+  @apply bg-gray-100 border-gray-300 text-gray-500;
+}
+
+.progress-step.active {
+  @apply bg-blue-100 border-blue-500 text-blue-700 animate-pulse;
+}
+
+.progress-step.completed {
+  @apply bg-green-100 border-green-500 text-green-700;
+}
+
+/* User Type Cards */
+.user-type-card {
+  @apply transition-all duration-500 transform hover:scale-105;
+}
+
+.user-type-card.selected {
+  @apply scale-105;
+}
+
+.user-type-card .card-inner {
+  @apply border-gray-200 hover:border-blue-300 transition-all duration-300;
+}
+
+.user-type-card.selected .card-inner {
+  @apply border-blue-500 bg-blue-50/80;
+}
+
+/* Question Type Cards */
+.question-type-card {
+  @apply transition-all duration-500 transform hover:scale-105;
+}
+
+.question-type-card.selected {
+  @apply scale-105;
+}
+
+.question-type-card .enhanced-card {
+  @apply hover:border-blue-300;
+}
+
+.question-type-card.selected .enhanced-card {
+  @apply border-blue-500 bg-blue-50/80;
+}
+
+/* MCQ Options */
+.mcq-option {
+  @apply transition-all duration-300 transform hover:scale-105;
+  @apply hover:shadow-md active:scale-95;
+}
+
+/* Gender Options */
+.gender-option {
+  @apply transition-all duration-300 transform hover:scale-105;
+  @apply hover:shadow-md active:scale-95;
+}
+
+/* Analysis Cards */
+.analysis-card {
+  @apply transition-all duration-500 hover:scale-105;
+}
+
+.diagnosis-item {
+  @apply transition-all duration-300 hover:scale-105;
+  @apply hover:border-blue-300;
+}
+
+.severity-indicator {
+  @apply animate-pulse;
+}
+
+/* Responsive Navigation */
+@media (max-width: 640px) {
+  .enhanced-container {
+    @apply px-3;
+  }
+  
+  .enhanced-grid {
+    @apply grid-cols-1 gap-3;
+  }
+  
+  .enhanced-card {
+    @apply rounded-xl;
+  }
+  
+  .enhanced-input, .enhanced-textarea {
+    @apply px-3 py-2 text-sm;
+  }
+  
+  .enhanced-button {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Loading States */
+.loading-shimmer {
+  @apply animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200;
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Enhanced Glassmorphism */
+.glass-card {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  @apply shadow-lg rounded-2xl;
+}
+
+.glass-navbar {
+  @apply bg-white/80 backdrop-blur-xl border-b border-white/20;
+  @apply shadow-lg sticky top-0 z-50;
+}
+
+/* Enhanced Accessibility */
+.focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2 outline-none;
+}
+
+/* Enhanced Mobile Navigation */
+@media (max-width: 768px) {
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg;
+    @apply border-t border-gray-200 shadow-lg z-50;
+  }
+  
+  .mobile-nav-item {
+    @apply flex-1 flex flex-col items-center py-2 px-1;
+    @apply text-xs font-medium text-gray-600 transition-colors;
+  }
+  
+  .mobile-nav-item.active {
+    @apply text-blue-600;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+  
+  .print-only {
+    @apply block;
+  }
+  
+  .enhanced-card {
+    @apply shadow-none border border-gray-300;
+  }
+}
